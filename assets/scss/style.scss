@@ -1,0 +1,185 @@
+@import './abstracts/variable';
+@import './mixins/breakpoints';
+@import './abstracts/common';
+@import './includes/header';
+@import './includes/footer';
+
+button{
+    border: 1px solid #323334;
+    background-color: transparent;
+    color: #323334;
+    padding: 13px 20px;
+    &:hover{
+        background-color: #323334;
+        color: whitesmoke;
+    }
+}
+
+.details{
+    display: none;
+    @include media-min-lg{
+        padding: 30px 0;
+        display: block;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .content-details{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            p{
+                margin-left: 10px;
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+.banner-wrapper{
+    background-color:#DBD0CC ;
+    .banner-section{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 0;
+        .banner-img{
+            width: 48%;
+        }
+        .banner-content{
+            width: 48%;
+            padding: 5px 8px 5px 0;
+            h4{
+                font-size: 13px;
+                padding: 10px 0;
+                color: #323334;
+                font-weight: 600;
+            }
+            h3{
+                color: #A86A3D;
+                line-height: 1.5;
+                font-size: 19px;
+                padding-bottom:10px;
+            }
+           
+        }
+    }
+}
+.hot-deals-wrapper{
+    margin-top: 10px;
+    padding: 15px;
+    .hot-deals-content{
+        padding: 30px 0;
+        font-size: 24px;
+        color: #323334;
+    }
+    .deals{
+        @include media-min-md{
+            display: flex;
+            justify-content: space-between;
+        }
+        .progress-wrapper{
+            outline: 1px solid #323334;
+            padding: 10px;
+            @include media-min-md{
+                width: 48%;
+            }
+            .progress-section{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 0;
+                .progress-image{
+                    width: 46%;
+                }
+                .progress-content{
+                    width: 48%;
+                    padding: 10px;
+                    h4{
+                        font-size: 20px;
+                        padding: 10px 0;
+                        margin-bottom: 10px;
+                        line-height: 1.5;
+                    }
+                }
+            }
+            .pro{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+            }
+            .progress {
+                background-color: rgba(128, 128, 128, 0.281);
+                border-radius: 20px;
+                height: 30px;
+                text-align: center;
+                width: 250px;
+                color: white;
+                .progress-done {
+                    background-image: linear-gradient( 109.6deg, #323334d2 11.2%, #3233347a 91.1% );
+                    border-radius: 20px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 0;
+                    opacity: 0;
+                    transition: all 1s ease-in-out;
+                  } 
+            }
+        }
+        .progress-wrapper-new{
+            margin-top: 20px;
+            outline: 1px solid #323334;
+            padding: 10px;
+            @include media-min-md{
+                margin-top: 0;
+                width: 48%;
+            }
+            // background-color: #EAE9E7;
+            .progress-section-new{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 0;
+                .progress-image-new{
+                    width: 48%;
+                }
+                .progress-content-new{
+                    width: 48%;
+                    padding: 10px;
+                    h4{
+                        font-size: 20px;
+                        padding: 10px 0;
+                        margin-bottom: 10px;
+                        line-height: 1.5;
+                    }
+                }
+            }
+            .pro-new{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+            }
+            .progress-new{
+                background-color: rgba(128, 128, 128, 0.281);
+                border-radius: 20px;
+                height: 30px;
+                text-align: center;
+                width: 250px;
+                color: white;
+                .progress-done-new{
+                    background-image: linear-gradient( 109.6deg, #323334d2 11.2%, #3233347a 91.1% );
+                    border-radius: 20px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 0;
+                    opacity: 0;
+                    transition: all 1s ease-in-out;
+                  } 
+            }
+        }
+    }
+}
