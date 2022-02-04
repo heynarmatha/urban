@@ -3,18 +3,20 @@
 @import './abstracts/common';
 @import './includes/header';
 @import './includes/footer';
-
 button{
     border: 1px solid #323334;
     background-color: transparent;
     color: #323334;
-    padding: 13px 20px;
+    padding: 10px;
     &:hover{
         background-color: #323334;
         color: whitesmoke;
     }
+    @include media-min-xl{
+        font-size: 18px;
+        padding: 15px 25px;
+    }
 }
-
 .details{
     display: none;
     @include media-min-lg{
@@ -36,6 +38,19 @@ button{
 }
 .banner-wrapper{
     background-color:#DBD0CC ;
+    .hurry{
+        padding: 10px;
+        visibility: hidden;
+        font-size: 20px;
+    }
+    .active-hurry{
+        visibility:visible;
+        color: red;
+    }
+    @include media-min-xl{
+        width: 80%;
+        margin: 0 auto;
+    }
     .banner-section{
         display: flex;
         justify-content: space-between;
@@ -52,12 +67,26 @@ button{
                 padding: 10px 0;
                 color: #323334;
                 font-weight: 600;
+                @include media-min-md{
+                    font-size: 20px;
+                }
+                @include media-min-xl{
+                    font-size: 30px;
+                    margin-bottom: 10px;
+                }
             }
             h3{
                 color: #A86A3D;
                 line-height: 1.5;
                 font-size: 19px;
                 padding-bottom:10px;
+                @include media-min-md{
+                    font-size: 2rem;
+                    margin-bottom: 20px;
+                }
+                @include media-min-xl{
+                    font-size: 3rem;
+                }
             }
            
         }
@@ -70,17 +99,50 @@ button{
         padding: 30px 0;
         font-size: 24px;
         color: #323334;
+        @include media-min-xl{
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    }
+    .hurry-deals{
+        display: none;
+    }
+    @include media-min-lg{
+        .hurry-deals{
+            display: block;
+            padding: 20px 0;
+            font-size: 20px;
+            color: red;
+        }
+    }
+    @include media-min-xl{
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+        margin-top: 20px;
     }
     .deals{
         @include media-min-md{
             display: flex;
             justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        @include media-min-xl{
+            margin-bottom: 40px;
         }
         .progress-wrapper{
             outline: 1px solid #323334;
             padding: 10px;
             @include media-min-md{
-                width: 48%;
+                width: 32.5%;
+                padding:0
+            }
+            @include media-min-lg{
+                width:32%;
+                padding:10px 5px;
+            }
+            @include media-min-xl{
+                padding:10px
             }
             .progress-section{
                 display: flex;
@@ -133,9 +195,16 @@ button{
             padding: 10px;
             @include media-min-md{
                 margin-top: 0;
-                width: 48%;
+                width: 32%;
+                padding:0
             }
-            // background-color: #EAE9E7;
+            @include media-min-lg{
+                width:32%;
+                padding:10px 5px;
+            }
+            @include media-min-xl{
+                padding:10px
+            }
             .progress-section-new{
                 display: flex;
                 justify-content: space-between;
@@ -179,6 +248,396 @@ button{
                     opacity: 0;
                     transition: all 1s ease-in-out;
                   } 
+            }
+        }
+        .progress-wrapper-update{
+            margin-top: 20px;
+            outline: 1px solid #323334;
+            padding: 10px;
+            @include media-min-md{
+                margin-top: 0;
+                width: 32.5%;
+                padding:0
+            }
+            @include media-min-lg{
+                width:32%;
+                padding:10px 5px;
+            }
+            @include media-min-xl{
+                padding:10px
+            }
+            // background-color: #EAE9E7;
+            .progress-section-update{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 0;
+                .progress-image-update{
+                    width: 48%;
+                }
+                .progress-content-update{
+                    width: 48%;
+                    padding: 10px;
+                    h4{
+                        font-size: 20px;
+                        padding: 10px 0;
+                        margin-bottom: 10px;
+                        line-height: 1.5;
+                    }
+                }
+            }
+            .pro-update{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+            }
+            .progress-update{
+                background-color: rgba(128, 128, 128, 0.281);
+                border-radius: 20px;
+                height: 30px;
+                text-align: center;
+                width: 250px;
+                color: white;
+                .progress-done-update{
+                    background-image: linear-gradient( 109.6deg, #323334d2 11.2%, #3233347a 91.1% );
+                    border-radius: 20px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 0;
+                    opacity: 0;
+                    transition: all 1s ease-in-out;
+                  } 
+            }
+        }
+    }
+}
+.things-wrapper{
+    display: grid;
+    grid-template-columns: auto auto;
+    @include media-min-md{
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+    }
+    @include media-min-xl-x{
+        grid-gap: 50px;
+    }
+    @include media-min-lg-x{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .things-1 img{
+        cursor: pointer;
+        filter: grayscale(1);
+        filter: brightness(80%);
+        cursor: pointer;
+        transition: all 1.5s ease-in-out;
+        &:hover{
+            filter: grayscale(0);
+        }
+    }
+    .things-1{
+        padding: 15px;
+        @include media-min-lg-x{
+            padding: 0;
+        }
+        .things-content{
+            padding: 20px 0;
+            h5{
+                color: #323334;
+                font-size: 18px;
+                padding-bottom: 8px;
+            }
+            .star{
+                i{
+                    color: goldenrod;
+                }
+            }
+            p{
+                color: #323334;
+                font-weight: 900;
+                padding-top: 15px;
+            }
+        }
+    }
+}
+.model{
+    background-color: rgba(0, 0, 0, 0.685);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+.full-img{
+    position: absolute;
+    height: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all 0.3s ease-in-out;
+}
+/* Dynamic Classes */
+.full-img.open {
+    transform: translate(-50%, -50%) scale(1);
+}
+.model.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.testimonials{
+    display: none;
+    @include media-min-lg{
+        display: block;
+    }
+    .title{
+        color: #323334;
+        text-align: center;
+        padding: 3rem 0;
+        font-size: 40px;
+    }
+    .content{
+        .slider {
+          max-width: 60rem;
+          margin: 0 auto;
+          text-align: center;
+          padding: 2vh 1vw;
+          .slide {
+            display: none;
+            h3 {
+                font-size: 30px;
+                padding: 20px 0;
+            }
+            p{
+                font-size: 25px;
+                font-weight: 300;
+                line-height: 1.7;
+                strong{
+                    font-weight: 900;
+                }
+            }
+            h6{
+                font-size: 18px;
+                color: grey;
+            }
+            .star{
+                padding: 20px 0;
+                i{
+                    color: goldenrod;
+                }
+            }
+          }
+          .active {
+            display: block;
+            animation: slide 1s linear;
+          }
+        }
+        .indicator {
+            padding-top: 4vh;
+            padding-bottom: 4vh;
+            display: flex;
+            justify-content: center;
+        }
+        .indicator img {
+            height: calc(6rem + 6vw);
+            width: calc(6rem + 6vw);
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 2vh 2vw;
+            opacity: 0.2;
+            border: 0.2rem solid #323334;
+            cursor: pointer;
+            transition: opacity 1s ease;
+        }
+        .indicator img.active {
+            opacity: 1;
+        }
+    }
+    @keyframes slide {
+        0% {
+          transform: translateX(-2rem);
+          opacity: 0;
+        }
+      
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+    }
+}
+.top-rating-wrapper{
+    padding: 15px;
+    @include media-min-xl{
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    h4{
+        color: #323334;
+        padding: 2rem 0;
+        font-size: 27px;
+    }
+    .top-section{
+        .section-1{
+            @include media-min-md{
+                display: grid;
+                grid-template-columns: auto auto;
+            }
+            @include media-min-lg-x{
+                grid-template-columns: auto auto auto;
+            }
+            
+            .hidden{
+                display: none;
+                @include media-min-lg-x{
+                    // display: block !important;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 15px 0;
+                    .product-img{
+                        width: 48%;
+                        filter: grayscale(1);
+                        filter: brightness(80%);
+                        cursor: pointer;
+                        &:hover{
+                            transition: all 1.5s ease-in-out;
+                            filter: grayscale(0);
+                        }
+                    }
+                    .product-content{
+                        width: 48%;
+                        padding: 10px;
+                        h5{
+                            color: #323334;
+                            font-size: 18px;
+                            padding: 10px 0;
+                        }
+                        .star{
+                            .color{
+                                color: goldenrod;
+                            }
+                            .opa{
+                                color: rgba(128, 128, 128, 0.198);
+                            }
+                        }
+                        p{
+                            color: #323334;
+                            font-weight: 900;
+                            padding: 10px 0;
+                        }
+                    }
+                }
+            }
+            .product{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 15px 0;
+                .product-img{
+                    width: 48%;
+                    filter: grayscale(1);
+                    filter: brightness(80%);
+                    cursor: pointer;
+                    &:hover{
+                        transition: all 1.5s ease-in-out;
+                        filter: grayscale(0);
+                    }
+                }
+                .product-content{
+                    width: 48%;
+                    padding: 10px;
+                    h5{
+                        color: #323334;
+                        font-size: 18px;
+                        padding: 10px 0;
+                    }
+                    .star{
+                        .color{
+                            color: goldenrod;
+                        }
+                        .opa{
+                            color: rgba(128, 128, 128, 0.198);
+                        }
+                    }
+                    p{
+                        color: #323334;
+                        font-weight: 900;
+                        padding: 10px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+.newsletter-section{
+    text-align: center;
+    padding:3rem 15px;
+    @include media-min-xl{
+        padding: 5rem 0;
+    }
+    .newsletter-wrapper{
+        @include media-min-md{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include media-min-xl{
+            width: 80%;
+            margin: 0 auto;
+        }
+        h5{
+            color: #323334;
+            font-size: 2rem;
+            padding: 15px 0;
+            @include media-min-md{
+                padding: 0;
+                width: 48%;
+            }
+            @include media-min-lg{
+               font-size: 2rem;
+            }
+            @include media-min-xl{
+                width: 48%;
+            }
+            @include media-min-xl-x{
+                font-size: 2.4rem;
+            }
+        }
+        .input-button{
+            margin-top: 1rem;
+            @include media-min-md{
+                width: 48%;
+            }
+            .subcribe-text{
+                width: 80%;
+                padding:  10px 15px;
+                color: grey;
+                outline: none;
+                border: 2px solid #323334;
+                @include media-min-md{
+                    padding: 10px 20px;
+                }
+                @include media-min-lg{
+                   width: 60%;
+                }
+            }
+            button{
+                padding: 10px 20px;
+                font-size: 15px;
+                border: 1px solid #323334;
+                background-color: #323334;
+                color: whitesmoke;
+                cursor: pointer;
+                @include media-min-md{
+                    padding: 10px 20px;
+                }
             }
         }
     }

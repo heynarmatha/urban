@@ -1,0 +1,81 @@
+footer{
+    background-color: whitesmoke;
+    .footer-wrapper{
+        padding: 15px;
+        @include media-min-md{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 15px;
+        }
+        @include media-min-xl{
+            width: 80%;
+            margin: 0 auto;
+            padding: 5rem 0;
+        }
+        h2{
+        //    @include font-style($font-bold-light);
+           font-size: 18px;
+           margin-bottom: 25px;
+           @include media-min-xl{
+               font-size: 1.5rem;
+           }
+        }
+        p{
+            // @include font-style($font-light-bold);
+            padding: 10px 0;
+            margin-bottom: 10px;
+    
+        }
+        a{
+            color: black;
+        }
+        .contact{
+            padding: 15px 0;
+            @include media-min-md{
+                width: 29%;
+                padding: 0;
+            }
+            ul{
+                li{
+                    padding: 10px 0;
+                    // @include font-style($font-bold-light);
+                    i{
+                        margin-right: 15px;
+                    }
+                    a{
+                        color: black;
+                    }
+                }
+            }
+            .bttn{
+                padding: 30px 0;
+                span{
+                    border: 1px solid rgba(128, 128, 128, 0.781);
+                    border-radius: 8px;
+                    padding: 10px;
+                }
+                .a-footer{
+                    padding: 10px;
+                    border-right:1px solid rgba(128, 128, 128, 0.781) ;
+                }
+                .b-footer{
+                    padding: 10px;
+                }
+            }
+        }
+        .popular{
+            padding: 15px 0;
+            @include media-min-md{
+                width: 29%;
+                padding: 0;
+            }
+            ul{
+                li{
+                    line-height: 2.3;
+                    // @include font-style($font-light-bold);
+                }
+            }
+        }
+    }
+}
