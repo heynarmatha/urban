@@ -496,7 +496,6 @@ button{
             .hidden{
                 display: none;
                 @include media-min-lg-x{
-                    // display: block !important;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;

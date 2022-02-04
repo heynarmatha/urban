@@ -14,7 +14,6 @@ footer{
             padding: 5rem 0;
         }
         h2{
-        //    @include font-style($font-bold-light);
            font-size: 18px;
            margin-bottom: 25px;
            @include media-min-xl{
@@ -22,7 +21,6 @@ footer{
            }
         }
         p{
-            // @include font-style($font-light-bold);
             padding: 10px 0;
             margin-bottom: 10px;
     
@@ -39,7 +37,6 @@ footer{
             ul{
                 li{
                     padding: 10px 0;
-                    // @include font-style($font-bold-light);
                     i{
                         margin-right: 15px;
                     }
@@ -73,7 +70,6 @@ footer{
             ul{
                 li{
                     line-height: 2.3;
-                    // @include font-style($font-light-bold);
                 }
             }
         }
